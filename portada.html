@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portada de la guía de aprendizaje para la experiencia educativa Ciberseguridad de la LICIC.">
+  <title>Portada | Guía de aprendizaje de Ciberseguridad</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <header class="encabezado-institucional">
+    <a class="logo-enlace" href="portada.html" aria-label="Ir a la portada de la guía">
+      <img src="recursos/imgs/logo-uv.png" alt="Logotipo de la Universidad Veracruzana" class="logo logo-uv">
+    </a>
+    <a class="logo-enlace" href="portada.html" aria-label="Guía de aprendizaje de la LICIC">
+      <img src="recursos/imgs/logo-licic.png" alt="Logotipo de la Licenciatura en Ingeniería en Ciberseguridad e Infraestructura de Cómputo" class="logo logo-licic">
+    </a>
+  </header>
+
+  <div class="estructura-pagina">
+    <nav class="menu-lateral" aria-label="Navegación principal">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-enlaces">
+        <span class="menu-toggle-icon" aria-hidden="true">☰</span>
+        <span>Menú</span>
+      </button>
+
+      <ul id="menu-enlaces" class="menu-enlaces">
+        <li><a href="portada.html" aria-current="page">Portada</a></li>
+        <li><a href="proposito.html">Propósito</a></li>
+        <li><a href="como_leer_guia.html">¿Cómo leer esta guía?</a></li>
+        <li><a href="nomenclatura_simbolos.html">Nomenclatura y símbolos</a></li>
+        <li>
+          <details class="menu-desplegable">
+            <summary>Temas de aprendizaje</summary>
+            <ul>
+              <li><a href="respuesta_incidentes.html">Respuesta a Incidentes</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="referencias.html">Referencias</a></li>
+      </ul>
+    </nav>
+
+    <main id="contenido-principal" class="contenido-principal">
+      <section class="tarjeta tarjeta-portada" aria-labelledby="titulo-trabajo">
+
+        <h1 id="titulo-trabajo">Guía de apoyo al aprendizaje para la experiencia educativa Ciberseguridad</h1>
+        <p class="subtitulo-portada">de la Licenciatura en Ingeniería en Ciberseguridad e Infraestructura de Cómputo</p>
+
+        <div class="datos-trabajo">
+          <p class="presentado-por">Presentado por</p>
+          <p class="dato-principal">Isaias Landa Cervantes</p>
+
+          <dl class="ficha-academica">
+            <div class="ficha-item">
+              <dt>Director(es):</dt>
+              <dd>Dr. Gerardo Contreras Vega | M.C.C Juan Carlos Pérez Arriaga</dd>
+            </div>
+            <div class="ficha-item">
+              <dt>Licenciatura:</dt>
+              <dd>Redes y Servicios de Cómputo</dd>
+            </div>
+            <div class="ficha-item">
+              <dt>Experiencia educativa:</dt>
+              <dd>Ciberseguridad</dd>
+            </div>
+            <div class="ficha-item">
+              <dt>Facultad:</dt>
+              <dd>Facultad de Estadística e Informática</dd>
+            </div>
+            <div class="ficha-item">
+              <dt>Ubicación:</dt>
+              <dd>Xalapa, Veracruz</dd>
+            </div>
+            <div class="ficha-item">
+              <dt>Fecha:</dt>
+              <dd>2 de noviembre de 2026</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="pie-pagina">
+    <p>Universidad Veracruzana · Guía de aprendizaje de Ciberseguridad</p>
+  </footer>
+</body>
+</html>

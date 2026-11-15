@@ -1,0 +1,844 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Respuesta a Incidentes | Guía de Ciberseguridad</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- Encabezado institucional -->
+  <header class="encabezado-institucional">
+    <a href="portada.html" class="logo-enlace">
+      <img src="recursos/imgs/logo-uv.png"
+           alt="Universidad Veracruzana"
+           class="logo logo-uv">
+    </a>
+
+    <a href="portada.html" class="logo-enlace">
+      <img src="recursos/imgs/logo-licic.png"
+           alt="LICIC"
+           class="logo logo-licic">
+    </a>
+  </header>
+
+  <!-- Estructura general -->
+  <div class="estructura-pagina">
+
+    <!-- Menú lateral -->
+    <aside class="menu-lateral">
+
+      <button class="menu-toggle"
+              aria-expanded="false"
+              aria-controls="menu-enlaces">
+        <span class="icono-menu">☰</span>
+        <span>Menú</span>
+      </button>
+
+      <nav id="menu-enlaces" class="menu-enlaces">
+        <ul>
+          <li><a href="portada.html">Portada</a></li>
+          <li><a href="proposito.html">Propósito</a></li>
+          <li><a href="como_leer_guia.html">¿Cómo leer la guía?</a></li>
+          <li><a href="nomenclatura_simbolos.html">Nomenclatura de símbolos</a></li>
+          <li>
+            <details class="menu-desplegable">
+            <summary>Temas de aprendizaje</summary>
+            <ul>
+              <li><a href="respuesta_incidentes.html" aria-current="page">Respuesta a Incidentes</a></li>
+            </ul>
+          </details>
+          </li>
+          <li><a href="referencias.html">Referencias</a></li>
+        </ul>
+      </nav>
+
+    </aside>
+
+    <!-- Contenido principal -->
+    <main id="contenido" class="contenido-principal">
+
+      <article class="tarjeta">
+
+        <h1>Respuesta a Incidentes</h1>
+
+        <!-- Objetivo -->
+        <section class="bloque-contenido">
+
+          <h2>Objetivo</h2>
+
+          <p>
+            El estudiante <strong>identifica</strong> las fases y actividades de un plan de respuesta a incidentes mediante la ejecución de estas en un entorno de laboratorio controlado con la intención de proteger la información de una organización.
+            
+          </p>
+
+        </section>
+
+        <!-- Descripción -->
+        <section class="bloque-contenido">
+
+          <h2>Descripción</h2>
+
+          <p>
+            En esta actividad resolveras un escenario práctico en el 
+            servidor ficticio  de una empresa ficticia llamada <strong>Nexus 
+	    Soluciones Logísticas</strong>. Usando la máquina virtual que descargaste, 
+            vas a ejecutar el proceso de respuesta a incidentes paso a paso: 
+            ubicarás las acciones del atacante en el sistema, mitigarás el impacto 
+	    del ataque y aplicarás las correcciones necesarias para restablecer 
+	    la seguridad del servidor.
+          </p>
+
+        </section>
+
+        <!-- Sección teórica -->
+        <section class="bloque-contenido seccion-guia">
+
+          <h2 class="titulo-con-icono">
+  		<img src="recursos/imgs/icono-teorico.png" alt="Icono de teoría">
+  		Sección Teórica
+	  </h2>
+
+          <h3>¿Qué es la respuesta a incidentes?</h3>
+
+          <p>
+            De acuerdo con el Joint Task Force on Cybersecurity Education,
+            la <strong>Respuesta a Incidentes</strong> (RI por sus
+            siglas en español) se refiere a las acciones tomadas por la
+            alta dirección para especificar los procesos y procedimientos
+            de la organización que anticipan, detectan y mitigan los
+            efectos de un incidente (JTF, 2017, p. 66).
+          </p>
+
+          <p>
+            Un <strong>incidente</strong> de ciberseguridad es un evento que se ha
+            determinado el cual tiene un impacto en la organización y
+            genera la necesidad de respuesta y recuperación
+            (National Institute of Standards and Technology [NIST], 2018)
+          </p>
+
+          <p>
+            En la ilustración 1, se muestra el flujo de una respuesta
+            a incidentes de forma general:
+          </p>
+
+          <!-- Imagen del proceso general -->
+          <figure class="figura-guia">
+            <img src="recursos/imgs/respuesta-incidentes.png"
+                 alt="Flujo general del proceso de respuesta a incidentes">
+            <figcaption>
+              Ilustración 1: Proceso de la respuesta a incidentes según
+              el plan de estudios de la EE Ciberseguridad de la LICIC.
+              De creación propia.
+            </figcaption>
+          </figure>
+
+          <!-- Etapas con pestañas -->
+          <section class="seccion-etapas">
+
+            <h2>Etapas</h2>
+
+            <p>
+              A continuación se desglosan cada una de las etapas de la
+              respuesta a incidentes:
+            </p>
+
+            <div class="contenedor-pestanas">
+
+              <!-- Navegación de pestañas -->
+              <div class="pestanas-incidentes"
+                   role="tablist"
+                   aria-label="Etapas de respuesta a incidentes">
+
+                <button class="pestana-incidente activa"
+                        id="tab-preparacion"
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="panel-preparacion"
+                        tabindex="0">
+                  Preparación
+                </button>
+
+                <button class="pestana-incidente"
+                        id="tab-identificacion"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="panel-identificacion"
+                        tabindex="-1">
+                  Identificación
+                </button>
+
+                <button class="pestana-incidente"
+                        id="tab-proteccion"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="panel-proteccion"
+                        tabindex="-1">
+                  Protección
+                </button>
+
+                <button class="pestana-incidente"
+                        id="tab-deteccion"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="panel-deteccion"
+                        tabindex="-1">
+                  Detección
+                </button>
+
+                <button class="pestana-incidente"
+                        id="tab-respuesta"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="panel-respuesta"
+                        tabindex="-1">
+                  Respuesta a Incidentes
+                </button>
+
+                <button class="pestana-incidente"
+                        id="tab-recuperacion"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="panel-recuperacion"
+                        tabindex="-1">
+                  Recuperación
+                </button>
+
+              </div>
+
+              <!-- Contenido de Preparación -->
+              <div class="panel-incidente activo"
+                   id="panel-preparacion"
+                   role="tabpanel"
+                   aria-labelledby="tab-preparacion"
+                   tabindex="0">
+
+                <h3>Preparación</h3>
+
+                <p>
+                  Prepararse antes de que ocurra un incidente es importante
+                  para mitigar cualquier impacto en la organización.
+                  Las actividades clave que la componen son los siguientes:
+                </p>
+
+                <ul>
+                  <li>
+                    <strong>Documentación de políticas y procedimientos:</strong>
+                    documentar y comprender las políticas y procedimientos
+                    estándar para la respuesta a incidentes.
+                  </li>
+                  <li>
+                    <strong>Instrumentación del entorno:</strong>
+                    implementar herramientas y mecanismos de monitoreo
+                    para detectar actividad sospechosa y maliciosa de
+                    manera oportuna.
+                  </li>
+                  <li>
+                    <strong>Plan del personal:</strong>
+                    establecer planes para todo el personal, definiendo
+                    roles, responsabilidades y cadenas de mando claras.
+                  </li>
+                  <li>
+                    <strong>Educación y concientización:</strong>
+                    capacitar a los usuarios finales sobre las
+                    ciberamenazas actuales y los procedimientos adecuados
+                    para la notificación de incidentes.
+                  </li>
+                  <li>
+                    <strong>Inteligencia de amenazas (CTI):</strong>
+                    aprovechar la inteligencia de amenazas cibernéticas
+                    (Cyber Threat Intelligence) para identificar de forma
+                    proactiva posibles actividades maliciosas antes de
+                    que impacten a una organización.
+                  </li>
+                </ul>
+
+                <p>
+                  Por otro lado, es importante definir las líneas base
+                  de sistemas y redes antes de que ocurra un incidente
+                  para comprender los parámetros de la actividad “normal”.
+                  Establecer estas líneas base permite a los equipos de
+                  defensa identificar falsos positivos y verdaderos
+                  negativos con mayor rapidez.
+                </p>
+
+                <p>La preparación también incluye:</p>
+
+                <ul>
+                  <li>
+                    Contar con la infraestructura adecuada para
+                    gestionar incidentes complejos.
+                  </li>
+                  <li>
+                    Desarrollar y probar continuamente cursos de acción
+                    específicos para la contención y erradicación
+                    de amenazas.
+                  </li>
+                  <li>
+                    Establecer medios seguros y confiables para la
+                    recolección de evidencia y análisis forense digital.
+                  </li>
+                </ul>
+
+              </div>
+
+              <!-- Contenido de Identificación -->
+              <div class="panel-incidente"
+                   id="panel-identificacion"
+                   role="tabpanel"
+                   aria-labelledby="tab-identificacion"
+                   tabindex="0"
+                   hidden>
+
+                <h3>Identificación</h3>
+
+                <p>
+                  La identificación es el desarrollo de la comprensión
+                  organizativa necesaria para gestionar el riesgo de
+                  ciberseguridad en sistemas, activos, datos y capacidades.
+                </p>
+
+                <p>
+                  Las actividades comprendidas dentro de esta etapa son
+                  fundamentales para comprender el contexto del negocio,
+                  los recursos que dan soporte a las funciones críticas y
+                  los riesgos de ciberseguridad asociados, permite a la
+                  organización enfocar y priorizar sus esfuerzos de manera
+                  alineada con su estrategia y sus necesidades operativas.
+                </p>
+
+                <p>Algunos factores claves incluyen:</p>
+
+                <ul>
+                  <li>
+                    <strong>Gestión de activos:</strong>
+                    identificación y control de los datos, personal,
+                    dispositivos, sistemas e instalaciones que permiten
+                    a la organización alcanzar sus fines operativos.
+                  </li>
+                  <li>
+                    <strong>Entorno de negocio:</strong>
+                    comprensión de la misión, objetivos, partes
+                    interesadas y actividades de la organización para
+                    priorizar los esfuerzos de ciberseguridad.
+                  </li>
+                  <li>
+                    <strong>Gobernanza:</strong>
+                    políticas, procedimientos y estructuras para
+                    monitorear los requisitos legales, reglamentarios,
+                    operativos y de riesgo de la organización.
+                  </li>
+                  <li>
+                    <strong>Evaluación de riesgos:</strong>
+                    comprensión del riesgo de ciberseguridad para las
+                    operaciones organizaciones, los activos y los individuos.
+                  </li>
+                  <li>
+                    <strong>Estrategia de gestión de riesgos:</strong>
+                    establecimiento de las prioridades limitaciones,
+                    tolerancia al riesgo y suposiciones operativas
+                    de la organización.
+                  </li>
+                </ul>
+
+              </div>
+
+              <!-- Contenido de Protección -->
+              <div class="panel-incidente"
+                   id="panel-proteccion"
+                   role="tabpanel"
+                   aria-labelledby="tab-proteccion"
+                   tabindex="0"
+                   hidden>
+
+                <h3>Protección</h3>
+
+                <p>
+                  Las acciones pertinentes para esta etapa son
+                  desarrollar e implementar las salvaguardas adecuadas
+                  para garantizar la prestación de servicios de
+                  infraestructura crítica.
+                </p>
+
+                <p>
+                  La función de protección respalda la capacidad de
+                  limitar o contener el impacto de un potencial evento
+                  de ciberseguridad mediante la implementación de
+                  recursos y estrategias para garantizar la prestación
+                  de servicios críticos.
+                </p>
+
+                <p>Dentro de esta se incluyen ciertos puntos:</p>
+
+                <ul>
+                  <li>
+                    <strong>Gestión de identidades y control de acceso:</strong>
+                    limitar el acceso físico y lógico a activos y redes
+                    únicamente a usuarios, procesos y dispositivos autorizados.
+                  </li>
+                  <li>
+                    <strong>Concientización y capacitación:</strong>
+                    asegurar que el personal y los socios reciban educación
+                    y formación sobre ciberseguridad para desempeñar sus
+                    funciones de forma segura.
+                  </li>
+                  <li>
+                    <strong>Seguridad de los datos:</strong>
+                    proteger la confidencialidad, integridad y
+                    disponibilidad de la información tanto en tránsito
+                    como en reposo.
+                  </li>
+                  <li>
+                    <strong>Procesos y procedimientos de protección
+                    de la información:</strong>
+                    mantenimiento y gestión de políticas de seguridad,
+                    procesos operativos y controles para proteger los
+                    sistemas y datos.
+                  </li>
+                  <li>
+                    <strong>Mantenimiento:</strong>
+                    realizar el mantenimiento y las reparaciones de los
+                    activos de sistemas de información con los controles
+                    de seguridad adecuados.
+                  </li>
+                </ul>
+
+              </div>
+
+              <!-- Contenido de Detección -->
+              <div class="panel-incidente"
+                   id="panel-deteccion"
+                   role="tabpanel"
+                   aria-labelledby="tab-deteccion"
+                   tabindex="0"
+                   hidden>
+
+                <h3>Detección</h3>
+
+                <p>
+                  Mediante la detección se desarrollan e implementan
+                  las actividades adecuadas para identificar la
+                  ocurrencia de un evento de ciberseguridad.
+                </p>
+
+                <p>
+                  El objetivo de esta fase es determinar si ha ocurrido
+                  un incidente de ciberseguridad, así como evaluar su
+                  tipo, alcance e impacto. Para ello, es indispensable
+                  comparar la actividad del entorno frente a una base
+                  línea del comportamiento normal.
+                </p>
+
+                <p>Actividades principales de la detección:</p>
+
+                <ul>
+                  <li>
+                    <strong>Identificar actividad anómala:</strong>
+                    detectar desviaciones en la red y el uso sospechoso
+                    de herramientas legitimas del sistema.
+                  </li>
+                  <li>
+                    <strong>Recolectar indicadores de compromiso (IOC):</strong>
+                    documentar artefactos e información técnica de la
+                    amenaza para orientar las búsquedas de ciberamenazas.
+                  </li>
+                  <li>
+                    <strong>Ajustar herramientas de monitoreo:</strong>
+                    actualizar reglas, firmas y controles de detección
+                    a medida que se identifican las Tácticas, Técnicas y
+                    Procedimientos (TTPs) del atacante.
+                  </li>
+                  <li>
+                    <strong>Refinar el alcance:</strong>
+                    utilizar los datos obtenidos para descubrir de forma
+                    continua otros sistemas o cuentas potencialmente impactadas.
+                  </li>
+                </ul>
+
+                <h4>Preguntas clave de evaluación</h4>
+
+                <p>
+                  Durante la detección, el equipo de respuesta debe
+                  responder rápidamente a:
+                </p>
+
+                <ul>
+                  <li>
+                    <strong>Acceso e Impacto:</strong>
+                    ¿Cuál fue el vector de ataque inicial y que
+                    vulnerabilidades o cuentas se explotaron?
+                  </li>
+                  <li>
+                    <strong>Persistencia y control:</strong>
+                    ¿Cómo mantiene el atacante el comando y control
+                    (C2) y la presencia en el sistema?
+                  </li>
+                  <li>
+                    <strong>Movimiento y exfiltración:</strong>
+                    ¿Existe movimiento lateral dentro de la red o
+                    evidencia de exfiltración de datos?
+                  </li>
+                </ul>
+
+                <h4>Fuentes principales de registros</h4>
+
+                <div class="tabla-responsiva">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Táctica</th>
+                        <th>Fuentes de monitoreo clave</th>
+                        <th>Indicadores comunes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Acceso Inicial / Ejecución</td>
+                        <td>Email, Proxy Web, EDR, Sysmon, Eventos de Windows</td>
+                        <td>Phishing, web Shell, ejecución anómala de scripts o Power Shell.</td>
+                      </tr>
+                      <tr>
+                        <td>Persistencia / Credenciales</td>
+                        <td>Registros de autenticación, controlador de dominio, registro.</td>
+                        <td>Tareas programadas no autorizadas, lecturas en memoria (LSASS), elevación de privilegios.</td>
+                      </tr>
+                      <tr>
+                        <td>Movimiento / C2 / Exfiltración</td>
+                        <td>Firewall, DNS, IDS/IPS, Registros de red interna y nube.</td>
+                        <td>Trafico saliente anómalo, dominio/IPs de C2s, conexiones Workstation-to-workstation.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+
+              <!-- Contenido de Respuesta a Incidentes -->
+              <div class="panel-incidente"
+                   id="panel-respuesta"
+                   role="tabpanel"
+                   aria-labelledby="tab-respuesta"
+                   tabindex="0"
+                   hidden>
+
+                <h3>Respuesta a Incidentes</h3>
+
+                <p>
+                  Esta etapa busca desarrollar e implementar las
+                  actividades adecuadas para tomar medidas ante un
+                  evento de ciberseguridad detectado. Esta función
+                  respalda la capacidad de contener el impacto de
+                  un evento adverso con los siguientes puntos clave:
+                </p>
+
+                <ul>
+                  <li>
+                    <strong>Planificación de la respuesta:</strong>
+                    ejecución de los procesos y procedimientos de
+                    respuesta durante y después de un incidente.
+                  </li>
+                  <li>
+                    <strong>Comunicaciones:</strong>
+                    coordinación con las partes interesadas internas
+                    y externas (usuarios, directivos, autoridades o
+                    proveedores de servicios).
+                  </li>
+                  <li>
+                    <strong>Análisis:</strong>
+                    examen profundo de las evidencias para comprender
+                    la magnitud del incidente y respaldar las acciones
+                    de respuesta.
+                  </li>
+                  <li>
+                    <strong>Mitigación:</strong>
+                    ejecución de acciones inmediatas para contener
+                    el incidente, erradicar la amenaza y mitigar
+                    el impacto.
+                  </li>
+                  <li>
+                    <strong>Mejoras:</strong>
+                    evaluación de las lecciones aprendidas para
+                    actualizar e impulsar la mejora continua de
+                    las actividades de respuesta.
+                  </li>
+                </ul>
+
+              </div>
+
+              <!-- Contenido de Recuperación -->
+              <div class="panel-incidente"
+                   id="panel-recuperacion"
+                   role="tabpanel"
+                   aria-labelledby="tab-recuperacion"
+                   tabindex="0"
+                   hidden>
+
+                <h3>Recuperación</h3>
+
+                <p>
+                  Finalmente, se busca desarrollar e implementar las
+                  actividades adecuadas para mantener los planes de
+                  resiliencia y restablecer cualquier capacidad o
+                  servicio que se haya visto afectado a raíz de un
+                  incidente de ciberseguridad. Esto ayuda a respaldar
+                  el retorno oportuno a las operaciones normales que
+                  reducen el impacto global del evento. Los puntos
+                  clave para esto son:
+                </p>
+
+                <ul>
+                  <li>
+                    <strong>Planificación de la recuperación:</strong>
+                    ejecución de procesos y procedimientos para la
+                    restauración oportuna de los sistemas y servicios afectados.
+                  </li>
+                  <li>
+                    <strong>Mejoras:</strong>
+                    actualización de la estrategia y los planes
+                    recuperación basándose en las lecciones aprendidas
+                    y los desafíos enfrentados.
+                  </li>
+                  <li>
+                    <strong>Comunicaciones:</strong>
+                    coordinación y gestión de la comunicación con las
+                    partes interesadas internas y externas durante el
+                    proceso de restauración de servicios.
+                  </li>
+                </ul>
+
+              </div>
+
+            </div>
+          </section>
+
+        </section>
+
+	
+<!-- Frameworks de respuesta a incidentes -->
+<section class="bloque-contenido seccion-guia">
+
+  <h2>Frameworks de respuesta a incidentes</h2>
+
+  <p>
+    A continuación, se presentan algunos marcos de referencia y
+    documentos especializados que permitiran complementar los
+    conocimientos sobre la respuesta a incidentes.
+  </p>
+
+  <div class="lista-frameworks">
+
+    <div class="framework-item">
+      <div class="framework-contenido">
+        <h3>NIST SP 800-61 Rev. 3</h3>
+        <p>
+          Publicación del National Institute of Standards and Technology
+          (NIST) que proporciona recomendaciones para integrar la
+          respuesta a incidentes en la gestión de riesgos de
+          ciberseguridad, tomando como referencia el Cybersecurity
+          Framework 2.0.
+        </p>
+        <a href="https://doi.org/10.6028/NIST.SP.800-61r3"
+           target="_blank"
+           rel="noopener noreferrer">
+          Consultar documento
+        </a>
+      </div>
+    </div>
+
+    <div class="framework-item">
+      <div class="framework-contenido">
+        <h3>CISA Cybersecurity Incident & Vulnerability Response Playbooks</h3>
+        <p>
+          Guías publicadas por la Cybersecurity and Infrastructure
+          Security Agency (CISA), que describen procedimientos
+          operativos para planificar y ejecutar actividades de
+          respuesta ante incidentes y vulnerabilidades de ciberseguridad.
+        </p>
+        <a href="https://www.cisa.gov/sites/default/files/2024-08/Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf"
+           target="_blank"
+           rel="noopener noreferrer">
+          Consultar documento
+        </a>
+      </div>
+    </div>
+
+    <div class="framework-item">
+      <div class="framework-contenido">
+        <h3>FIRST CSIRT Services Framework</h3>
+        <p>
+          Marco de referencia desarrollado por el Forum of Incident
+          Response and Security Teams (FIRST), que organiza y describe
+          los servicios y funciones que pueden ofrecer los equipos de
+          respuesta a incidentes de seguridad informática (CSIRT).
+        </p>
+        <a href="https://www.first.org/standards/frameworks/csirts/"
+           target="_blank"
+           rel="noopener noreferrer">
+          Consultar documento
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+        <!-- Actividad práctica -->
+        <section class="bloque-contenido seccion-guia">
+
+          <h2 class="titulo-con-icono">
+  		<img src="recursos/imgs/icono-practica.png" alt="">
+  		Práctica
+	  </h2>
+
+          <p>
+            Nexus Soluciones Logísticas, S.A. de C.V. es una empresa
+            dedicada al almacenamiento, control de inventario y
+            distribución dentro de la cadena de suministro a nivel
+            regional. Para optimizar sus procesos operativos y la
+            gestión documental interna, la organización opera un
+            servidor web que aloja el Sistema de Gestión Documental
+            Interno (SGDI), un portal utilizado por el personal
+            administrativo para la carga de facturas, manifiestos
+            y reportes operativos.
+          </p>
+
+          <p>
+            El pasado 23 de octubre de 2026, el Centro de Operaciones
+            de Seguridad (SOC) de la empresa detectó anomalías en el
+            tráfico de red del servidor que aloja el portal web. Se
+            identificaron salidas de datos durante la madrugada y
+            conexiones persistentes hacia dominios externos no
+            autorizadas. Ante la sospecha de una intrusión en curso
+            y un posible compromiso de la información corporativa,
+            el departamento de TI procedió a notificar al departamento
+            de respuesta a incidentes para realizar el proceso adecuado.
+          </p>
+
+          <h3>Instrucciones</h3>
+
+          <p>
+            A continuación se anexa una imagen virtual del servidor
+            comprometido, donde el alumno debe ejecutar el proceso
+            de respuesta a incidentes que se mencionó en la sección teórica.
+          </p>
+
+          <!-- Recurso descargable -->
+          <div class="recurso-descargable">
+            <p class="titulo-con-icono">
+  		<img src="recursos/imgs/icono-descarga.png" alt="">
+		Máquina virtual: IR-Nexus-Incident.ova - Tamaño: 450 MB
+	    </p>
+
+            <a href="recursos/downloads/IR-Nexus-Incident.ova"
+               class="enlace-descarga"
+               download>
+              Descargar máquina virtual
+            </a>
+
+          </div>
+
+        </section>
+
+        <!-- Evaluación -->
+        <section class="bloque-contenido seccion-guia">
+
+          <h2 class="titulo-con-icono">
+  		<img src="recursos/imgs/icono-evaluacion.png" alt="">
+  		Evaluación
+	  </h2>
+
+          <div class="tabla-responsiva">
+
+            <table class="tabla-evaluacion">
+
+              <thead>
+                <tr>
+                  <th>Criterios</th>
+                  <th>Excelente (Cumple con el rigor técnico) - 10 pts.</th>
+                  <th>Regular (Parcial / Incompleto) – 5 pts.</th>
+                  <th>Insuficiente / No presentado – 0 pts.</th>
+                  <th>Puntaje total</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Identifica la dirección IP del atacante cuando se subió el archivo malicioso al servidor.</td>
+                  <td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                  <td>Localiza el nombre del archivo malicioso.</td>
+                  <td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                  <td>Identifica las acciones de reconocimiento local realizadas por el atacante.</td>
+                  <td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                  <td>Identifica los cambios realizados en el sistema operativo.</td>
+                  <td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                  <td>Localiza el contenido temporal con la información comprometida y exfiltrada.</td>
+                  <td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                  <td>Identifica el método utilizado para exfiltrar información, así como el destino.</td>
+                  <td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                  <td>Presenta una cronología coherente y secuencial que conecta todo el flujo del ataque.</td>
+                  <td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                  <td>Presenta un plan de recuperación adecuado para la continuación del plan de negocios.</td>
+                  <td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                  <td>Explica soluciones para corregir la vulnerabilidad aprovechada para realizar el ataque.</td>
+                  <td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                  <td>Implementa las soluciones anteriores mostrando el funcionamiento de estas.</td>
+                  <td></td><td></td><td></td><td></td>
+                </tr>
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+	
+	<!-- Nota sobre la entrega de evidencias -->
+	<h2 class="titulo-con-icono">
+                <img src="recursos/imgs/icono-nota.png" alt="">
+                <p>
+		  Nota: las evidencias serán subidas a la plataforma Eminus 4 en la actividad "Respuesta a Incidentes".
+        	</p>  
+	</h2>
+	</div>
+
+      </article>
+
+    </main>
+
+  </div>
+
+  <!-- Pie de página -->
+  <footer class="pie-pagina">
+    <p>
+      Guía de aprendizaje de la experiencia educativa Ciberseguridad |
+      LICIC | Universidad Veracruzana
+    </p>
+  </footer>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
